@@ -1,4 +1,5 @@
 <!-- SGVsbG8gY3J5YmFiaWVzLg== -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,25 +8,128 @@
 <title>CITADL</title>
 <meta name="robots" content="index,follow,noarchive,nosnippet"/>
 <meta name="theme-color" content="#2D2D2D"/>
-<link rel="icon" href="logo.svg" type="image/svg+xml"/>
+<link rel="icon" href="logomark.svg" type="image/svg+xml"/>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Manrope:wght@100&display=swap');
-:root{--fg:#fff;--bg:#2D2D2D}
-html,body{background:var(--bg);margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;font-family:'Manrope','Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;text-transform:uppercase;color:var(--fg);letter-spacing:.14em;font-weight:100;overflow-x:hidden;padding-top:10vh}
-.container{width:80vw;max-width:420px;display:flex;flex-direction:column;align-items:flex-start}
-.logo{width:67.5%;max-width:calc(.675*420px);margin:0 auto 4vh auto;opacity:0;animation:logoFade 1.2s ease-out forwards}
-@keyframes logoFade{from{opacity:0}to{opacity:1}}
-.content-block{width:100%;margin-top:2vh;margin-bottom:3vh;letter-spacing:.14em;line-height:1.7;font-size:clamp(9px,1.6vw,11px);text-align:left;white-space:pre-wrap;word-break:normal}
-.cursor{display:inline-block;width:7px;height:1em;background:rgba(255,255,255,.85);margin-left:2px;animation:blink .7s steps(1) infinite;position:relative;top:-0.1em}
+:root{--fg:rgba(255,255,255,0.95);--bg:#2D2D2D;--accent:orange}
+html,body{
+  background:var(--bg);
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  font-family:'Manrope','Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;
+  text-transform:uppercase;
+  color:var(--fg);
+  letter-spacing:.14em;
+  font-weight:100;
+  overflow-x:hidden;
+  padding-top:10vh;
+}
+.container{
+  width:80vw;
+  max-width:420px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+}
+.logo{
+  width:37.125%;
+  opacity:0.75;
+  margin-bottom:4vh;
+  animation:logoFade 1.2s ease-out forwards;
+}
+@keyframes logoFade{from{opacity:0}to{opacity:0.75}}
+.content-block{
+  width:100%;
+  margin-top:2vh;
+  margin-bottom:3vh;
+  letter-spacing:.14em;
+  line-height:1.7;
+  font-size:clamp(9px,1.6vw,11px);
+  text-align:left;
+  white-space:pre-wrap;
+  word-break:normal;
+}
+.cursor{
+  display:inline-block;
+  width:7px;
+  height:1em;
+  background:var(--accent);
+  margin-left:2px;
+  animation:blink .7s steps(1) infinite;
+  position:relative;
+  top:0.15em;
+}
 @keyframes blink{50%{background:transparent}}
-.form-wrapper{width:100%;margin-top:2vh;opacity:0;display:flex;flex-direction:column;gap:12px}
+.form-wrapper{
+  width:100%;
+  margin-top:2vh;
+  opacity:0;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
 form{display:flex;flex-direction:column;width:100%;align-items:center}
-input,textarea{width:100%;background:none;border:.5px solid rgba(255,255,255,.25);color:var(--fg);font-family:'Manrope','Inter',sans-serif;font-weight:100;font-size:clamp(9px,1.6vw,11px);text-transform:uppercase;letter-spacing:.14em;padding:11px;outline:none;text-align:left;box-sizing:border-box;opacity:0;transform:translateY(6px)}
-input::placeholder,textarea::placeholder{color:rgba(255,255,255,.35);font-weight:100}
+input,textarea{
+  width:100%;
+  background:none;
+  border:.5px solid rgba(255,255,255,.25);
+  color:var(--fg);
+  font-family:'Manrope','Inter',sans-serif;
+  font-weight:100;
+  font-size:clamp(9px,1.6vw,11px);
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  padding:11px;
+  outline:none;
+  text-align:left;
+  box-sizing:border-box;
+  opacity:0;
+  transform:translateY(6px);
+  caret-color:var(--accent);
+}
+input:focus,textarea:focus{
+  color:var(--accent);
+  border-color:var(--accent);
+}
+input::placeholder,textarea::placeholder{
+  color:rgba(255,255,255,.35);
+  font-weight:100;
+}
 textarea{height:98px;resize:none}
-button{background:none;border:1px solid rgba(255,255,255,.35);color:var(--fg);font-family:'Manrope','Inter',sans-serif;font-weight:100;text-transform:uppercase;letter-spacing:.21em;font-size:clamp(8px,1.4vw,10px);padding:8px 24px;cursor:pointer;transition:.3s ease;opacity:0;transform:translateY(6px);align-self:center;margin-top:18px}
+button{
+  background:none;
+  border:1px solid rgba(255,255,255,.35);
+  color:var(--fg);
+  font-family:'Manrope','Inter',sans-serif;
+  font-weight:100;
+  text-transform:uppercase;
+  letter-spacing:.21em;
+  font-size:clamp(8px,1.4vw,10px);
+  padding:8px 24px;
+  cursor:pointer;
+  transition:.3s ease;
+  opacity:0;
+  transform:translateY(6px);
+  align-self:flex-start;
+  margin-top:18px;
+  padding-left:11px;
+  width:auto;
+}
 button:hover{background:rgba(255,255,255,.15);letter-spacing:.25em}
-#form-status{font-size:clamp(8px,1.5vw,10px);color:rgba(255,255,255,.35);margin-top:10px;min-height:12px;letter-spacing:.14em;opacity:0}
+#form-status{
+  font-size:clamp(8px,1.5vw,10px);
+  color:var(--accent);         
+  margin-top:10px;
+  min-height:12px;
+  letter-spacing:.14em;
+  opacity:0;
+  text-align:left;             
+  width:100%;
+}
 @keyframes fadeLine{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 </style>
 </head>
@@ -53,7 +157,33 @@ function typeChars(el,cursor,text,speed,done){cursor.style.display='inline-block
 function revealFormLines(){inputs.forEach((el,i)=>setTimeout(()=>{el.style.animation='fadeLine .6s ease forwards'},i*120))}
 window.addEventListener('load',()=>{setTimeout(()=>{convCursor.style.display='none';typeChars(paraEl,paraCursor,paragraphText,24,()=>{paraCursor.style.display='none';convCursor.style.display='inline-block';setTimeout(()=>{typeChars(convEl,convCursor,convoText,28,()=>{formWrapper.style.opacity=1;revealFormLines()})},180)})},240)});
 const form=document.getElementById('contact-form'),status=document.getElementById('form-status');
-form.addEventListener('submit',async e=>{e.preventDefault();const data=new FormData(form),email=data.get('email');if(!email){status.textContent='email required.';return}status.textContent='sending...';try{const r=await fetch(form.action,{method:form.method,body:data,headers:{Accept:'application/json'}});r.ok?(status.textContent='message sent.',form.reset()):status.textContent='error. try again.'}catch{status.textContent='network error.'}});
+form.addEventListener('submit',async e=>{e.preventDefault();const data=new FormData(form),email=data.get('email');if(!email){status.textContent='email required.';status.style.opacity=1;return}status.textContent='sending...';status.style.opacity=1;try{const r=await fetch(form.action,{method:form.method,body:data,headers:{Accept:'application/json'}});r.ok?(status.textContent='message sent.',form.reset()):status.textContent='error. try again.';status.style.opacity=1}catch{status.textContent='network error.';status.style.opacity=1}});
 </script>
 </body>
 </html>
+
+
+<!--⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠛⠛⠛⠋⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠙⠛⠛⠛⠿⠻⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⡀⠠⠤⠒⢂⣉⣉⣉⣑⣒⣒⠒⠒⠒⠒⠒⠒⠒⠀⠀⠐⠒⠚⠻⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⡠⠔⠉⣀⠔⠒⠉⣀⣀⠀⠀⠀⣀⡀⠈⠉⠑⠒⠒⠒⠒⠒⠈⠉⠉⠉⠁⠂⠀⠈⠙⢿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⠀⠔⠁⠠⠖⠡⠔⠊⠀⠀⠀⠀⠀⠀⠀⠐⡄⠀⠀⠀⠀⠀⠀⡄⠀⠀⠀⠀⠉⠲⢄⠀⠀⠀⠈⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⠋⠀⠀⠀⠀⠀⠀⠀⠊⠀⢀⣀⣤⣤⣤⣤⣀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠜⠀⠀⠀⠀⣀⡀⠀⠈⠃⠀⠀⠀⠸⣿⣿⣿⣿
+⣿⣿⣿⣿⡿⠥⠐⠂⠀⠀⠀⠀⡄⠀⠰⢺⣿⣿⣿⣿⣿⣟⠀⠈⠐⢤⠀⠀⠀⠀⠀⠀⢀⣠⣶⣾⣯⠀⠀⠉⠂⠀⠠⠤⢄⣀⠙⢿⣿⣿
+⣿⡿⠋⠡⠐⠈⣉⠭⠤⠤⢄⡀⠈⠀⠈⠁⠉⠁⡠⠀⠀⠀⠉⠐⠠⠔⠀⠀⠀⠀⠀⠲⣿⠿⠛⠛⠓⠒⠂⠀⠀⠀⠀⠀⠀⠠⡉⢢⠙⣿
+⣿⠀⢀⠁⠀⠊⠀⠀⠀⠀⠀⠈⠁⠒⠂⠀⠒⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⢀⣀⡠⠔⠒⠒⠂⠀⠈⠀⡇⣿
+⣿⠀⢸⠀⠀⠀⢀⣀⡠⠋⠓⠤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠀⠀⠀⠈⠢⠤⡀⠀⠀⠀⠀⠀⠀⢠⠀⠀⠀⡠⠀⡇⣿
+⣿⡀⠘⠀⠀⠀⠀⠀⠘⡄⠀⠀⠀⠈⠑⡦⢄⣀⠀⠀⠐⠒⠁⢸⠀⠀⠠⠒⠄⠀⠀⠀⠀⠀⢀⠇⠀⣀⡀⠀⠀⢀⢾⡆⠀⠈⡀⠎⣸⣿
+⣿⣿⣄⡈⠢⠀⠀⠀⠀⠘⣶⣄⡀⠀⠀⡇⠀⠀⠈⠉⠒⠢⡤⣀⡀⠀⠀⠀⠀⠀⠐⠦⠤⠒⠁⠀⠀⠀⠀⣀⢴⠁⠀⢷⠀⠀⠀⢰⣿⣿
+⣿⣿⣿⣿⣇⠂⠀⠀⠀⠀⠈⢂⠀⠈⠹⡧⣀⠀⠀⠀⠀⠀⡇⠀⠀⠉⠉⠉⢱⠒⠒⠒⠒⢖⠒⠒⠂⠙⠏⠀⠘⡀⠀⢸⠀⠀⠀⣿⣿⣿
+⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠑⠄⠰⠀⠀⠁⠐⠲⣤⣴⣄⡀⠀⠀⠀⠀⢸⠀⠀⠀⠀⢸⠀⠀⠀⠀⢠⠀⣠⣷⣶⣿⠀⠀⢰⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠁⢀⠀⠀⠀⠀⠀⡙⠋⠙⠓⠲⢤⣤⣷⣤⣤⣤⣤⣾⣦⣤⣤⣶⣿⣿⣿⣿⡟⢹⠀⠀⢸⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠑⠀⢄⠀⡰⠁⠀⠀⠀⠀⠀⠈⠉⠁⠈⠉⠻⠋⠉⠛⢛⠉⠉⢹⠁⢀⢇⠎⠀⠀⢸⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣀⠈⠢⢄⡉⠂⠄⡀⠀⠈⠒⠢⠄⠀⢀⣀⣀⣰⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⢀⣎⠀⠼⠊⠀⠀⠀⠘⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⡀⠉⠢⢄⡈⠑⠢⢄⡀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⢀⠀⠀⠀⠀⠀⢻⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣀⡈⠑⠢⢄⡀⠈⠑⠒⠤⠄⣀⣀⠀⠉⠉⠉⠉⠀⠀⠀⣀⡀⠤⠂⠁⠀⢀⠆⠀⠀⢸⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣄⡀⠁⠉⠒⠂⠤⠤⣀⣀⣉⡉⠉⠉⠉⠉⢀⣀⣀⡠⠤⠒⠈⠀⠀⠀⠀⣸⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣶⣶⣤⣤⣤⣤⣀⣀⣤⣤⣤⣶⣾⣿⣿⣿⣿⣿
+Vs lbh ner ernqvat guvf, V yvir erag serr va lbhe zvaqf
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿-->
