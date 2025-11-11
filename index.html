@@ -1,5 +1,4 @@
 <!-- SGVsbG8gY3J5YmFiaWVzLg== -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -122,12 +121,12 @@ button{
 button:hover{background:rgba(255,255,255,.15);letter-spacing:.25em}
 #form-status{
   font-size:clamp(8px,1.5vw,10px);
-  color:var(--accent);         
+  color:var(--accent);
   margin-top:10px;
   min-height:12px;
   letter-spacing:.14em;
   opacity:0;
-  text-align:left;             
+  text-align:left;
   width:100%;
 }
 @keyframes fadeLine{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
@@ -148,16 +147,62 @@ button:hover{background:rgba(255,255,255,.15);letter-spacing:.25em}
   </div>
 </div>
 <script>
-const paragraphText='Entropy does not announce itself. It begins in language, spreads through culture, and calcifies in systems. The remedy is precision, clarity applied through design, code, and disciplined execution. The work is iterative, technical, and relentless. Simplicity is the resolution of complexity once it is fully understood.';
-const convoText='Every solution begins as a conversation:';
-const paraEl=document.getElementById('para'),convEl=document.getElementById('conv');
-const paraCursor=document.getElementById('paraCursor'),convCursor=document.getElementById('convCursor');
-const formWrapper=document.getElementById('formWrapper'),inputs=formWrapper.querySelectorAll('input,textarea,button,#form-status');
-function typeChars(el,cursor,text,speed,done){cursor.style.display='inline-block';let i=0;const tick=()=>{if(i>=text.length){cursor.style.display='inline-block';if(done)done();return}el.textContent+=text.charAt(i);i++;setTimeout(tick,speed)};tick()}
-function revealFormLines(){inputs.forEach((el,i)=>setTimeout(()=>{el.style.animation='fadeLine .6s ease forwards'},i*120))}
-window.addEventListener('load',()=>{setTimeout(()=>{convCursor.style.display='none';typeChars(paraEl,paraCursor,paragraphText,24,()=>{paraCursor.style.display='none';convCursor.style.display='inline-block';setTimeout(()=>{typeChars(convEl,convCursor,convoText,28,()=>{formWrapper.style.opacity=1;revealFormLines()})},180)})},240)});
-const form=document.getElementById('contact-form'),status=document.getElementById('form-status');
-form.addEventListener('submit',async e=>{e.preventDefault();const data=new FormData(form),email=data.get('email');if(!email){status.textContent='email required.';status.style.opacity=1;return}status.textContent='sending...';status.style.opacity=1;try{const r=await fetch(form.action,{method:form.method,body:data,headers:{Accept:'application/json'}});r.ok?(status.textContent='message sent.',form.reset()):status.textContent='error. try again.';status.style.opacity=1}catch{status.textContent='network error.';status.style.opacity=1}});
+const paragraphText = `Every solution begins as a conversation.\n\nWhat follows is analysis, design, and iteration. The slow replacement of noise with structure. Systems drift when decisions go unexamined. Processes fragment when ownership fades. Clarity restores momentum.\n\nIteration refines intent. Listening anchors design. Relentless execution closes the loop. Sometimes that means building tools that think the way you do. Sometimes it means revealing the patterns buried in your numbers.\n\nTrue progress lives in the alignment of design, intent, and execution.\n\nSimplicity is not the absence of complexity. It is what remains when everything unnecessary is removed.`;
+const convoText = "Let's talk:";
+const paraEl = document.getElementById('para'), convEl = document.getElementById('conv');
+const paraCursor = document.getElementById('paraCursor'), convCursor = document.getElementById('convCursor');
+const formWrapper = document.getElementById('formWrapper'), inputs = formWrapper.querySelectorAll('input,textarea,button,#form-status');
+
+function typeWords(el, cursor, text, speed, done) {
+  const words = text.split(' ');
+  let i = 0;
+  const tick = () => {
+    if (i >= words.length) {
+      cursor.style.display = 'inline-block';
+      if (done) done();
+      return;
+    }
+    el.textContent += (i > 0 ? ' ' : '') + words[i];
+    i++;
+    setTimeout(tick, speed);
+  };
+  tick();
+}
+
+function revealFormLines(){
+  inputs.forEach((el,i)=>setTimeout(()=>{el.style.animation='fadeLine .6s ease forwards'},i*120))
+}
+
+window.addEventListener('load',()=>{
+  setTimeout(()=>{
+    convCursor.style.display='none';
+    typeWords(paraEl, paraCursor, paragraphText, 120, ()=>{
+      paraCursor.style.display='none';
+      convCursor.style.display='inline-block';
+      setTimeout(()=>{
+        typeWords(convEl, convCursor, convoText, 180, ()=>{
+          formWrapper.style.opacity=1;
+          revealFormLines();
+        });
+      },180);
+    });
+  },240);
+});
+
+const form = document.getElementById('contact-form'), status = document.getElementById('form-status');
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const data = new FormData(form), email = data.get('email');
+  if(!email){status.textContent='email required.';status.style.opacity=1;return;}
+  status.textContent='sending...';status.style.opacity=1;
+  try{
+    const r = await fetch(form.action,{method:form.method,body:data,headers:{Accept:'application/json'}});
+    r.ok ? (status.textContent='message sent.', form.reset()) : status.textContent='error. try again.';
+    status.style.opacity=1;
+  }catch{
+    status.textContent='network error.';status.style.opacity=1;
+  }
+});
 </script>
 </body>
 </html>
