@@ -1,158 +1,59 @@
+<!-- SGVsbG8gY3J5YmFiaWVzLg== -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CITADL</title>
-
-  <meta name="description" content="Strategy. Systems. Execution." />
-  <meta name="robots" content="index,follow,noarchive" />
-  <meta name="theme-color" content="#2D2D2D" />
-
-  <link rel="icon" href="logo.svg" type="image/svg+xml" />
-
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap');
-
-    html, body {
-      background: #2D2D2D;
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-      text-transform: uppercase;
-      color: #d6d6d6;
-      letter-spacing: 0.14em; 
-      animation: fadeIn 2s ease;
-    }
-
-    img {
-      display: block;
-      height: auto;
-      margin: 1vh 0;
-      opacity: 0;
-      animation: imageFade 1.5s ease forwards;
-    }
-    img:first-of-type { width: clamp(90px, 15vw, 160px); }
-    img:last-of-type  { width: clamp(120px, 22vw, 230px); animation-delay: .8s; }
-
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes imageFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-
-    .form-wrapper {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      margin-top: 6vh;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 80vw;
-      max-width: 300px;
-      transform: scaleX(1.08); 
-      transform-origin: center;
-    }
-
-    input, textarea {
-      width: 100%;
-      background: none;
-      border: 0.5px solid rgba(255, 255, 255, 0.25);
-      color: #d6d6d6;
-      font-weight: 100;
-      font-size: clamp(7px, 1.3vw, 9px);
-      text-transform: uppercase;
-      letter-spacing: 0.14em; 
-      padding: 8px;
-      margin-bottom: 10px;
-      outline: none;
-      text-align: left;
-      box-sizing: border-box;
-    }
-
-    input::placeholder, textarea::placeholder {
-      color: rgba(255, 255, 255, 0.35);
-      font-weight: 100;
-    }
-
-    textarea {
-      height: 70px;
-      resize: none;
-    }
-
-    button {
-      background: none;
-      border: 0.5px solid rgba(255, 255, 255, 0.25);
-      color: #d6d6d6;
-      font-weight: 100;
-      text-transform: uppercase;
-      letter-spacing: 0.21em; 
-      font-size: clamp(7px, 1.3vw, 9px);
-      padding: 6px 22px;
-      cursor: pointer;
-      transition: 0.3s ease;
-    }
-
-    button:hover {
-      background: rgba(255, 255, 255, 0.15);
-      color: #fff;
-      letter-spacing: 0.25em;
-      transition: 0.4s ease;
-    }
-
-    #form-status {
-      font-size: clamp(6px, 1.1vw, 8px);
-      color: rgba(255, 255, 255, 0.35);
-      margin-top: 10px;
-      min-height: 12px;
-      font-weight: 100;
-      letter-spacing: 0.14em;
-    }
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>CITADL</title>
+<meta name="robots" content="index,follow,noarchive,nosnippet"/>
+<meta name="theme-color" content="#2D2D2D"/>
+<link rel="icon" href="logo.svg" type="image/svg+xml"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Manrope:wght@100&display=swap');
+:root{--fg:#fff;--bg:#2D2D2D}
+html,body{background:var(--bg);margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;font-family:'Manrope','Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;text-transform:uppercase;color:var(--fg);letter-spacing:.14em;font-weight:100;overflow-x:hidden;padding-top:10vh}
+.container{width:80vw;max-width:420px;display:flex;flex-direction:column;align-items:flex-start}
+.logo{width:67.5%;max-width:calc(.675*420px);margin:0 auto 4vh auto;opacity:0;animation:logoFade 1.2s ease-out forwards}
+@keyframes logoFade{from{opacity:0}to{opacity:1}}
+.content-block{width:100%;margin-top:2vh;margin-bottom:3vh;letter-spacing:.14em;line-height:1.7;font-size:clamp(9px,1.6vw,11px);text-align:left;white-space:pre-wrap;word-break:normal}
+.cursor{display:inline-block;width:7px;height:1em;background:rgba(255,255,255,.85);margin-left:2px;animation:blink .7s steps(1) infinite;position:relative;top:-0.1em}
+@keyframes blink{50%{background:transparent}}
+.form-wrapper{width:100%;margin-top:2vh;opacity:0;display:flex;flex-direction:column;gap:12px}
+form{display:flex;flex-direction:column;width:100%;align-items:center}
+input,textarea{width:100%;background:none;border:.5px solid rgba(255,255,255,.25);color:var(--fg);font-family:'Manrope','Inter',sans-serif;font-weight:100;font-size:clamp(9px,1.6vw,11px);text-transform:uppercase;letter-spacing:.14em;padding:11px;outline:none;text-align:left;box-sizing:border-box;opacity:0;transform:translateY(6px)}
+input::placeholder,textarea::placeholder{color:rgba(255,255,255,.35);font-weight:100}
+textarea{height:98px;resize:none}
+button{background:none;border:1px solid rgba(255,255,255,.35);color:var(--fg);font-family:'Manrope','Inter',sans-serif;font-weight:100;text-transform:uppercase;letter-spacing:.21em;font-size:clamp(8px,1.4vw,10px);padding:8px 24px;cursor:pointer;transition:.3s ease;opacity:0;transform:translateY(6px);align-self:center;margin-top:18px}
+button:hover{background:rgba(255,255,255,.15);letter-spacing:.25em}
+#form-status{font-size:clamp(8px,1.5vw,10px);color:rgba(255,255,255,.35);margin-top:10px;min-height:12px;letter-spacing:.14em;opacity:0}
+@keyframes fadeLine{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+</style>
 </head>
 <body>
-  <img src="logo.svg" alt="CITADL logo" />
-  <img src="tagline.svg" alt="Strategy. Systems. Execution." />
-
-  <div class="form-wrapper">
+<div class="container">
+  <img class="logo" src="logo.svg" alt="CITADL logo"/>
+  <div id="paraBlock" class="content-block"><span id="para"></span><span class="cursor" id="paraCursor"></span></div>
+  <div id="convWrapper" class="content-block" style="margin-bottom:1vh;"><span id="conv"></span><span class="cursor" id="convCursor"></span></div>
+  <div id="formWrapper" class="form-wrapper">
     <form id="contact-form" action="https://formspree.io/f/xblqjlon" method="POST">
-      <input type="email" name="email" placeholder="return channel" required />
-      <textarea name="message" placeholder="unfiltered data" required></textarea>
+      <input type="email" name="email" placeholder="your email (required)" required/>
+      <textarea name="message" placeholder="operational context" required></textarea>
       <button type="submit">dispatch</button>
       <p id="form-status"></p>
     </form>
   </div>
-
-  <script>
-    const form = document.getElementById("contact-form");
-    const status = document.getElementById("form-status");
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const data = new FormData(form);
-      status.textContent = "sending...";
-      try {
-        const response = await fetch(form.action, {
-          method: form.method,
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-        if (response.ok) {
-          status.textContent = "message sent.";
-          form.reset();
-        } else {
-          status.textContent = "error. try again.";
-        }
-      } catch {
-        status.textContent = "network error.";
-      }
-    });
-  </script>
+</div>
+<script>
+const paragraphText='Entropy does not announce itself. It begins in language, spreads through culture, and calcifies in systems. The remedy is precision, clarity applied through design, code, and disciplined execution. The work is iterative, technical, and relentless. Simplicity is the resolution of complexity once it is fully understood.';
+const convoText='Every solution begins as a conversation:';
+const paraEl=document.getElementById('para'),convEl=document.getElementById('conv');
+const paraCursor=document.getElementById('paraCursor'),convCursor=document.getElementById('convCursor');
+const formWrapper=document.getElementById('formWrapper'),inputs=formWrapper.querySelectorAll('input,textarea,button,#form-status');
+function typeChars(el,cursor,text,speed,done){cursor.style.display='inline-block';let i=0;const tick=()=>{if(i>=text.length){cursor.style.display='inline-block';if(done)done();return}el.textContent+=text.charAt(i);i++;setTimeout(tick,speed)};tick()}
+function revealFormLines(){inputs.forEach((el,i)=>setTimeout(()=>{el.style.animation='fadeLine .6s ease forwards'},i*120))}
+window.addEventListener('load',()=>{setTimeout(()=>{convCursor.style.display='none';typeChars(paraEl,paraCursor,paragraphText,24,()=>{paraCursor.style.display='none';convCursor.style.display='inline-block';setTimeout(()=>{typeChars(convEl,convCursor,convoText,28,()=>{formWrapper.style.opacity=1;revealFormLines()})},180)})},240)});
+const form=document.getElementById('contact-form'),status=document.getElementById('form-status');
+form.addEventListener('submit',async e=>{e.preventDefault();const data=new FormData(form),email=data.get('email');if(!email){status.textContent='email required.';return}status.textContent='sending...';try{const r=await fetch(form.action,{method:form.method,body:data,headers:{Accept:'application/json'}});r.ok?(status.textContent='message sent.',form.reset()):status.textContent='error. try again.'}catch{status.textContent='network error.'}});
+</script>
 </body>
 </html>
